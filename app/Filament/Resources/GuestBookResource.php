@@ -7,6 +7,7 @@ use App\Filament\Resources\GuestBookResource\RelationManagers;
 use App\Models\GuestBook;
 use Filament\Actions\DeleteAction;
 use Filament\Forms;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -27,9 +28,14 @@ class GuestBookResource extends Resource
         return $form
             ->schema([
                 //
-                TextInput::make('name'),
-                TextInput::make('email'),
-                TextInput::make('message'),
+                TextInput::make('name')->required(),
+                TextInput::make('email')
+                    ->email()
+                    ->required(),
+                Textarea::make('message')
+                    ->rows(10)
+                    ->cols(10)
+                    ->required(),
             ]);
     }
 
