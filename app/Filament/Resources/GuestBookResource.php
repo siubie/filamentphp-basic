@@ -40,7 +40,7 @@ class GuestBookResource extends Resource
                 //
                 TextColumn::make('name'),
                 TextColumn::make('email'),
-                TextColumn::make('message')
+                TextColumn::make('message')->wrap()
             ])
             ->filters([
                 //
