@@ -5,7 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\GuestBookResource\Pages;
 use App\Filament\Resources\GuestBookResource\RelationManagers;
 use App\Models\GuestBook;
+use Filament\Actions\DeleteAction;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -25,6 +27,9 @@ class GuestBookResource extends Resource
         return $form
             ->schema([
                 //
+                TextInput::make('name'),
+                TextInput::make('email'),
+                TextInput::make('message'),
             ]);
     }
 
@@ -42,6 +47,7 @@ class GuestBookResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
