@@ -7,4 +7,4 @@ Route::get('/', function () {
 });
 
 Route::resource('guest-books', 'App\Http\Controllers\GuestBookController')
-    ->only(['index']);
+    ->only(['index', 'create', 'store']);
