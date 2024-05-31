@@ -34,67 +34,50 @@ License: You must have a valid license from official store to legally use the th
 </head>
 
 <body class="text-gray-700">
-    <!-- preloader -->
-    <div class="preloader loaded-success fixed inset-0 z-50 bg-gray-50">
-        <div class="absolute left-1/2 top-1/2 transform -translate-y-1/2">
-            <div class="relative mx-auto my-12">
-                <div class="inline-block">
-                    <svg class="animate-spin h-8 w-8 text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                            stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ========== { HEADER }==========  -->
     <header class="fixed top-0 left-0 right-0 z-40">
-        @include('layout.nav')
+        @include('content.nav')
     </header><!-- end header -->
 
     <!-- =========={ MAIN }==========  -->
     <main id="content">
         <!-- hero start -->
         <div id="hero" class="section relative z-0 py-16 md:pt-32 md:pb-20 bg-gray-50">
-            @include('layout.hero')
+            @include('content.hero')
         </div>
         <!-- end Hero -->
 
         <!-- start services -->
         <div id="services" class="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
-            @include('layout.services')
+            @include('content.services')
         </div><!-- End Service -->
 
         <!-- Portfolio Content -->
         <div id="portfolio" class="section relative z-0 py-12 md:py-16 bg-white">
-            @include('layout.portfolio')
+            @include('content.portfolio')
         </div><!--  End Content -->
 
         <!-- start clients -->
         <div id="clients" class="section relative py-8 bg-white dark:bg-gray-800">
-            @include('layout.clients')
+            @include('content.clients')
         </div><!-- End brand-->
 
         <!-- Team start -->
         <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
-            @include('layout.teams')
+            @include('content.teams')
         </div>
         <!-- End Team-->
 
         <!-- contact start -->
         <div id="contact" class="section relative pb-20 bg-white dark:bg-gray-800">
-            @include('layout.contact')
+            @include('content.contact')
         </div><!-- End contact -->
     </main><!-- end main -->
 
     <!-- =========={ FOOTER }==========  -->
     <footer class="bg-gray-50 text-gray-700">
-        @include('layout.footer')
+        @include('content.footer')
     </footer><!-- end footer -->
 
     <!-- =========={ SCROLL TO TOP }==========  -->
