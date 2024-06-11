@@ -28,7 +28,8 @@ class HeroResource extends Resource
             ->schema([
                 //add file upload for image
                 Forms\Components\FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->required(),
                 //add title field
                 Forms\Components\TextInput::make('title')
                     ->required(),
