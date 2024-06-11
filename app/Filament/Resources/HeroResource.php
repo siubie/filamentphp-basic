@@ -14,6 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class HeroResource extends Resource
 {
@@ -63,7 +64,15 @@ class HeroResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 //add delete action
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    //add after delete action{
+                    ->after(function (Hero $hero) {
+                        //check if there are images
+                        if ($hero->image) {
+                            //delete image
+                            Storage::disk('public')->delete($hero->image);
+                        }
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
