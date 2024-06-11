@@ -37,10 +37,12 @@ class HeroResource extends Resource
                     ->required(),
                 //add link one field
                 Forms\Components\TextInput::make('link_one')
-                    ->required(),
+                    ->required()
+                    ->url(),
                 //add link two field
                 Forms\Components\TextInput::make('link_two')
-                    ->required(),
+                    ->required()
+                    ->url(),
                 //add is active toggle
                 Forms\Components\Toggle::make('is_active'),
             ]);
