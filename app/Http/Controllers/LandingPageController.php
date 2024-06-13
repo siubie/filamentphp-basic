@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hero;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -12,6 +13,8 @@ class LandingPageController extends Controller
     {
         //get the hero record that is active
         $hero = Hero::where('is_active', 1)->first();
-        return view('welcome', compact('hero'));
+        //get all the services record
+        $services = Service::all();
+        return view('welcome', compact('hero', 'services'));
     }
 }

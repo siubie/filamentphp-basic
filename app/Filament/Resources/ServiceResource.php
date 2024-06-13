@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,9 +35,8 @@ class ServiceResource extends Resource
         return $table
             ->columns([
                 //add column for icon
-                TextColumn::make('icon')
-                    ->searchable()
-                    ->sortable(),
+                ImageColumn::make('icon')
+                    ->circular(),
                 //add column for name
                 TextColumn::make('name')
                     ->searchable()

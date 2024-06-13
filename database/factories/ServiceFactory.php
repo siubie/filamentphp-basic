@@ -18,9 +18,9 @@ class ServiceFactory extends Factory
     {
         return [
             //create factory for service table
-            'icon' => $this->faker->word,
+            'icon' => $this->faker->imageUrl(),
             'name' => $this->faker->word,
-            'description' => $this->faker->text,
+            'description' => $this->faker->realText(),
         ];
     }
 }
