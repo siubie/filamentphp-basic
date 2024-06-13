@@ -28,8 +28,7 @@ class HeroResource extends Resource
             ->schema([
                 //add file upload for image
                 Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                    ->image(),
                 //add title field
                 Forms\Components\TextInput::make('title')
                     ->required(),
@@ -59,7 +58,13 @@ class HeroResource extends Resource
                 TextColumn::make('title')
                     ->searchable(),
                 //add is active as toggle collumn
-                Tables\Columns\ToggleColumn::make('is_active'),
+                Tables\Columns\ToggleColumn::make('is_active')
+                    ->afterStateUpdated(function (Hero $hero, $state) {
+                        if ($state) {
+                            //update other hero records to inactive if new hero is active
+                            Hero::where('id', '!=', $hero->id)->update(['is_active' => 0]);
+                        }
+                    })
             ])
             ->filters([
                 //add title as filter
