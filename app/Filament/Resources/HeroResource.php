@@ -46,13 +46,6 @@ class HeroResource extends Resource
                     ->url(),
                 //add is active toggle
                 Forms\Components\Toggle::make('is_active')
-                    ->after(function (Hero $hero) {
-                        //check if there are images
-                        if ($hero->is_active) {
-                            //set all other heroes to inactive
-                            Hero::where('id', '!=', $hero->id)->update(['is_active' => false]);
-                        }
-                    }),
             ]);
     }
 
