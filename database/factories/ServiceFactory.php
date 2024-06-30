@@ -27,7 +27,9 @@ class ServiceFactory extends Factory
         ];
         return [
             //choose random icon from the $icon array
-            'icon' => $icons[$this->faker->numberBetween(0, 5)],
+            'icon' => $this->faker->unique()->randomElement(
+                $icons
+            ),
             //add faker for title
             'title' => $this->faker->sentence(2),
             //add faker for description
