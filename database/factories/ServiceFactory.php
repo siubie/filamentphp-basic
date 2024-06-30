@@ -16,9 +16,18 @@ class ServiceFactory extends Factory
      */
     public function definition(): array
     {
+        //create array of icon for services using available svg files inside public/img/dummy folder
+        $icons = [
+            'dummy/brand.svg',
+            'dummy/budget.svg',
+            'dummy/creativeAds.svg',
+            'dummy/optimize.svg',
+            'dummy/seo.svg',
+            'dummy/social.svg',
+        ];
         return [
-            //add faker for icon
-            'icon' => $this->faker->imageUrl(),
+            //choose random icon from the $icon array
+            'icon' => $icons[$this->faker->numberBetween(0, 5)],
             //add faker for title
             'title' => $this->faker->sentence(2),
             //add faker for description
