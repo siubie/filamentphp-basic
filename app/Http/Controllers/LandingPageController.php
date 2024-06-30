@@ -16,9 +16,20 @@ class LandingPageController extends Controller
 
         //get all services order by ascending
         $services = \App\Models\Service::orderBy('position', 'asc')->get();
+        //get 10 portfolio order by descending
+        $portfolios = \App\Models\Portfolio::orderBy('created_at', 'desc')->take(10)->get();
 
 
 
-        return view('welcome', compact('hero', 'mainTitle', 'animationTitle', 'services'));
+        return view(
+            'welcome',
+            compact(
+                'hero',
+                'mainTitle',
+                'animationTitle',
+                'services',
+                'portfolios'
+            )
+        );
     }
 }
