@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
         //call other seeders
         $this->call([
             GuestBookSeeder::class,
+            HeroSeeder::class,
+            ServiceSeeder::class
         ]);
     }
 }
