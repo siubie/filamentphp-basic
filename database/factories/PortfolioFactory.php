@@ -20,7 +20,7 @@ class PortfolioFactory extends Factory
             //add faker for image
             'image' => $this->faker->imageUrl(),
             //add faker for title
-            'title' => $this->faker->sentence,
+            'title' => $this->faker->word,
             //add faker for description
             'description' => $this->faker->paragraph,
             //add faker for category_id
