@@ -25,7 +25,7 @@ class HeroResource extends Resource
     protected static ?string $model = Hero::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-sparkles';
-
+    protected static ?int $navigationSort = 2;
     public static function form(Form $form): Form
     {
         return $form
