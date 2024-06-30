@@ -20,11 +20,11 @@
     @foreach ($portfolios as $portfolio)
         <figure class="flex-shrink max-w-full px-3 w-full sm:w-1/2 lg:w-1/5 group wow fadeInUp" data-wow-duration="1s">
             <div class="relative overflow-hidden cursor-pointer mb-6">
-                <a href="{{ $portfolio->image }}" data-gallery="gallery1"
+                <a href="{{ Storage::url($portfolio->image) }}" data-gallery="gallery1"
                     data-glightbox="title: {{ $portfolio->title }}; description: {{ $portfolio->description }}"
                     class="glightbox3">
                     <img class="block w-full h-auto transform duration-500 grayscale hover:scale-125"
-                        src="{{ $portfolio->image }}" alt="Image Description">
+                        src="{{ Storage::url($portfolio->image) }}" alt="Image Description">
                     <div
                         class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-black text-center">
                         <h3 class="text-base leading-normal font-semibold my-1 text-white">{{ $portfolio->title }}</h3>
