@@ -14,5 +14,14 @@ class HeroSeeder extends Seeder
     {
         //call hero factory to create 10 heros
         \App\Models\Hero::factory(15)->create();
+        //create one hero
+        \App\Models\Hero::create([
+            'title' => 'We are a Digital Agency serve#Online Marketing|Web Design|Brand Identity|Social Content',
+            'subtitle' => 'We would direct you to limitless ideas and move your brand into a global landscape.',
+            'image' => 'https://via.placeholder.com/640x480.png/00ee11?text=est',
+            'is_active' => true,
+            'link1' => 'https://www.google.com',
+            'link2' => 'https://www.google.com'
+        ]);
     }
 }

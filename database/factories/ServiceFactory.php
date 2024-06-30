@@ -23,6 +23,8 @@ class ServiceFactory extends Factory
             'title' => $this->faker->sentence(2),
             //add faker for description
             'description' => $this->faker->paragraph,
+            //add faker for position unique number between 1-10
+            'position' => $this->faker->unique()->numberBetween(1, 6),
         ];
     }
 }
