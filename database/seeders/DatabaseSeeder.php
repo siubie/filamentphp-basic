@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GuestBookSeeder::class,
             HeroSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            PortfolioSeeder::class
         ]);
     }
 }
