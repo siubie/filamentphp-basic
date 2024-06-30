@@ -16,9 +16,22 @@ class PortfolioFactory extends Factory
      */
     public function definition(): array
     {
+        //create array of img for portfolio using available svg files inside public/img/dummy folder
+        $images = [
+            'dummy/img1.jpg',
+            'dummy/img2.jpg',
+            'dummy/img3.jpg',
+            'dummy/img4.jpg',
+            'dummy/img5.jpg',
+            'dummy/img6.jpg',
+            'dummy/img7.jpg',
+            'dummy/img8.jpg',
+            'dummy/img9.jpg',
+            'dummy/img10.jpg',
+        ];
         return [
             //add faker for image
-            'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->unique()->randomElement($images),
             //add faker for title
             'title' => $this->faker->word,
             //add faker for description
