@@ -18,8 +18,8 @@ class LandingPageController extends Controller
         $services = \App\Models\Service::orderBy('position', 'asc')->get();
         //get 10 portfolio order by descending
         $portfolios = \App\Models\Portfolio::orderBy('created_at', 'desc')->take(10)->get();
-
-
+        //get all clients order by random
+        $clients = \App\Models\Client::inRandomOrder()->get();
 
         return view(
             'welcome',
@@ -28,7 +28,8 @@ class LandingPageController extends Controller
                 'mainTitle',
                 'animationTitle',
                 'services',
-                'portfolios'
+                'portfolios',
+                'clients'
             )
         );
     }
