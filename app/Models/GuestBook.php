@@ -13,5 +13,6 @@ class GuestBook extends Model
         'name',
         'email',
         'message',
+        'subject',
     ];
 }

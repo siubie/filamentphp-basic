@@ -21,6 +21,7 @@ class GuestBookFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'message' => $this->faker->text(),
+            'subject' => $this->faker->sentence(),
         ];
     }
 }

@@ -24,7 +24,7 @@ class GuestBookResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
     //add navigation sort
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 8;
 
     public static function form(Form $form): Form
     {
@@ -33,6 +33,9 @@ class GuestBookResource extends Resource
                 //
                 TextInput::make('name')->required(),
                 TextInput::make('email')
+                    ->email()
+                    ->required(),
+                TextInput::make('subject')
                     ->email()
                     ->required(),
                 Textarea::make('message')
