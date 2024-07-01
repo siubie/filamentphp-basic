@@ -18,11 +18,10 @@ class TeamFactory extends Factory
     {
         //create array of image from dummy/avatar
         $avatars = [
-            'avatar.png',
-            'avatar1.png',
-            'avatar2.png',
-            'avatar3.png',
-            'avatar4.png',
+            'dummy/avatar1.png',
+            'dummy/avatar2.png',
+            'dummy/avatar3.png',
+            'dummy/avatar4.png',
         ];
         return [
             //create avatar with faker unique random from avatars
