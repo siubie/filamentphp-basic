@@ -38,6 +38,8 @@ class {{ resourceClass }} extends Resource
             ])
             ->actions([
 {{ tableActions }}
+                //add delete action
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

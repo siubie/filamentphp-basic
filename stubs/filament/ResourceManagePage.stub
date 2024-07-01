@@ -16,4 +16,10 @@ class {{ resourcePageClass }} extends {{ baseResourcePageClass }}
             Actions\CreateAction::make(),
         ];
     }
+
+    //redirect to index after crate
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
+    }
 }

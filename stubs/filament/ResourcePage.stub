@@ -9,4 +9,10 @@ use {{ baseResourcePage }};
 class {{ resourcePageClass }} extends {{ baseResourcePageClass }}
 {
     protected static string $resource = {{ resourceClass }}::class;
+
+    //redirect to index after crate
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
+    }
 }
