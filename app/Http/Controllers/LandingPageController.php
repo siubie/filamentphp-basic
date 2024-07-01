@@ -20,7 +20,9 @@ class LandingPageController extends Controller
         $portfolios = \App\Models\Portfolio::latest()->take(10)->get();
         //get all clients order by random
         $clients = \App\Models\Client::inRandomOrder()->get();
+        //get all team
+        $teams = \App\Models\Team::all();
 
-        return view('welcome', compact('hero', 'mainTitle', 'animationTitle', 'services', 'portfolios', 'clients'));
+        return view('welcome', compact('hero', 'mainTitle', 'animationTitle', 'services', 'portfolios', 'clients', 'teams'));
     }
 }
