@@ -15,22 +15,12 @@ class LandingPageController extends Controller
         $animationTitle = explode('|', $animationTitle);
 
         //get all services order by ascending
-        $services = \App\Models\Service::orderBy('position', 'asc')->get();
+        $services = \App\Models\Service::orderBy('position')->get();
         //get 10 portfolio order by descending
-        $portfolios = \App\Models\Portfolio::orderBy('created_at', 'desc')->take(10)->get();
+        $portfolios = \App\Models\Portfolio::latest()->take(10)->get();
         //get all clients order by random
         $clients = \App\Models\Client::inRandomOrder()->get();
 
-        return view(
-            'welcome',
-            compact(
-                'hero',
-                'mainTitle',
-                'animationTitle',
-                'services',
-                'portfolios',
-                'clients'
-            )
-        );
+        return view('welcome', compact('hero', 'mainTitle', 'animationTitle', 'services', 'portfolios', 'clients'));
     }
 }
