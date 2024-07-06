@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hero;
+use App\Models\Portfolio;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,8 @@ class LandingPageController extends Controller
         $animation = explode('#', $animation);
         //get all the services record order by sort column
         $services = Service::orderBy('sort')->get();
-        return view('welcome', compact('hero', 'title', 'animation', 'services'));
+        //get all portfolio with category
+        $portfolios = Portfolio::with('category')->inRandomOrder()->limit(10)->get();
+        return view('welcome', compact('hero', 'title', 'animation', 'services', 'portfolios'));
     }
 }
