@@ -46,8 +46,7 @@ class ServiceResource extends Resource
         return $table
             ->columns([
                 //add column for icon
-                ImageColumn::make('icon')
-                    ->circular(),
+                ImageColumn::make('icon'),
                 //add column for name
                 TextColumn::make('name')
                     ->searchable()
