@@ -19,7 +19,7 @@ class HeroFactory extends Factory
         return [
             //generate factory for hero model
             'image' => $this->faker->imageUrl(),
-            'title' => $this->faker->sentence(),
+            'title' => "We are a Digital Agency serve#Online Marketing|Web Design|Brand Identity|Social Content",
             'subtitle' => $this->faker->sentence(),
             'link1' => $this->faker->url(),
             'link2' => $this->faker->url(),
