@@ -14,5 +14,9 @@ class HeroSeeder extends Seeder
     {
         //create hero using factory
         \App\Models\Hero::factory(10)->create();
+        //call hero factory set is_active to true
+        \App\Models\Hero::factory()->create([
+            'is_active' => true,
+        ]);
     }
 }

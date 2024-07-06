@@ -13,8 +13,12 @@ class LandingPageController extends Controller
     {
         //get the hero record that is active
         $hero = Hero::where('is_active', 1)->first();
+        //split hero title into title and animation
+        [$title, $animation] = explode('|', $hero->title);
+        //split animation
+        $animation = explode('#', $animation);
         //get all the services record
         $services = Service::all();
-        return view('welcome', compact('hero', 'services'));
+        return view('welcome', compact('hero', 'title', 'animation', 'services'));
     }
 }
