@@ -17,8 +17,8 @@ class LandingPageController extends Controller
         [$title, $animation] = explode('|', $hero->title);
         //split animation
         $animation = explode('#', $animation);
-        //get all the services record
-        $services = Service::all();
+        //get all the services record order by sort column
+        $services = Service::orderBy('sort')->get();
         return view('welcome', compact('hero', 'title', 'animation', 'services'));
     }
 }

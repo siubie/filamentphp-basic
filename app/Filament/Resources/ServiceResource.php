@@ -57,6 +57,7 @@ class ServiceResource extends Resource
                     ->sortable()
                     ->wrap(true),
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])
