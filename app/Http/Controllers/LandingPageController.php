@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Hero;
 use App\Models\Portfolio;
 use App\Models\Service;
@@ -22,6 +23,8 @@ class LandingPageController extends Controller
         $services = Service::orderBy('sort')->get();
         //get all portfolio with category
         $portfolios = Portfolio::with('category')->inRandomOrder()->limit(10)->get();
-        return view('welcome', compact('hero', 'title', 'animation', 'services', 'portfolios'));
+        //get all client in random order
+        $clients = Client::inRandomOrder()->get();
+        return view('welcome', compact('hero', 'title', 'animation', 'services', 'portfolios', 'clients'));
     }
 }
